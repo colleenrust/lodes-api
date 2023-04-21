@@ -4,6 +4,20 @@ class MembersController < ApplicationController
     render :index
   end
   def show
-    p params[:id]
+    @member = Member.find_by(id: params[:id])
+    render :show
+  end
+  def create
+    @member = Member.new(
+      first_name:params[:first_name],
+      last_name: params[:last_name],
+      birthdate: params[:birthdate],
+      age: params[:age],
+      created_at: params[:created_at], 
+      updated_at: params[:updated_at]
+    )
+    @member.save
+    render :show
+
   end
 end
