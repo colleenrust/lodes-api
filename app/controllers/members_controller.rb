@@ -22,8 +22,7 @@ class MembersController < ApplicationController
   end
   def destroy
     @member = Member.find_by(id: params[:id])
-    @member.status = "family member removed"
-    member.save
+    @member.destroy
     render json:{message: "family member removed"}
   end
 end
