@@ -20,4 +20,10 @@ class MembersController < ApplicationController
     render :show
 
   end
+  def destroy
+    @member = Member.find_by(id: params[:id])
+    @member.status = "family member removed"
+    member.save
+    render json:{message: "family member removed"}
+  end
 end

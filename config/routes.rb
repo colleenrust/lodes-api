@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get "/members" => "members#index"
   get "/members/:id" => "members#show"
   post "/members" => "members#create"
+  delete "/members/:id" => "members#destroy"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
