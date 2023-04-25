@@ -1,7 +1,6 @@
 class MembersController < ApplicationController
   def index
     @members = Member.all
-    render :index
   end
   def show
     @member = Member.find_by(id: params[:id])
@@ -15,7 +14,7 @@ class MembersController < ApplicationController
       age: params[:age],
       created_at: params[:created_at], 
       updated_at: params[:updated_at]
-    )
+    ) 
     @member.save
     render :show
 
